@@ -1,5 +1,6 @@
 package com.example.imgr.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,8 +11,9 @@ import javax.persistence.*;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(indexes = {
-    @Index(name = "uniqueIndex", columnList = "email", unique = true)
+@Table(uniqueConstraints = {
+        @UniqueConstraint(columnNames = "username"),
+        @UniqueConstraint(columnNames = "email")
 })
 public class UserEntity {
     @Id
@@ -20,12 +22,8 @@ public class UserEntity {
 
     private String email;
     private String username;
+    @JsonIgnore
     private String password;
     private boolean verified = false;
-
-    public UserEntity(String email, String username, String password) {
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
+    private boolean enabled = true;
 }

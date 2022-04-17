@@ -12,9 +12,9 @@ import java.util.Date;
 @Component
 @Log4j2
 public class JwtUtils {
-    @Value("${imgr.app.jwtSecret}")
+    @Value("${imgr.app.jwt.secret}")
     private String jwtSecret;
-    @Value("${imgr.app.jwtExpiration}")
+    @Value("${imgr.app.jwt.expiration}")
     private int jwtExpirationMs;
 
     public String generateJwtToken(Authentication authentication) {

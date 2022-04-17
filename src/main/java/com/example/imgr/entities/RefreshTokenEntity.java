@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.UUID;
 
 @Entity(name = "refresh_tokens")
 @Data
@@ -16,7 +15,7 @@ import java.util.UUID;
 public class RefreshTokenEntity {
     @Id
     @GeneratedValue
-    private UUID id;
+    private Long id;
 
     private String value;
 }

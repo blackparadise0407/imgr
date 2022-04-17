@@ -1,10 +1,14 @@
 package com.example.imgr.dto;
 
-import com.example.imgr.security.services.UserDetailsImpl;
+import com.example.imgr.entities.UserEntity;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
 @AllArgsConstructor
+@Setter
+@Getter
 public class JwtResponse {
     private String accessToken;
-    private UserDetailsImpl user;
+    private UserEntity user;
 }

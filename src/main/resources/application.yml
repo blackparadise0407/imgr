@@ -3,8 +3,13 @@ server:
 
 imgr:
   app:
-    jwtSecret: 040799Khoa
-    jwtExpiration: 900000
+    jwt:
+      secret: 040799Khoa
+      expiration: 900000
+    mail:
+      username: blackparadise0407@gmail.com
+      password: lhurwbzmuuijkclo
+
 
 spring:
   application:
@@ -14,6 +19,24 @@ spring:
       order: 10
     user:
       password: 040799
+  mail:
+    host: smtp.gmail.com
+    port: 465
+    username: blackparadise0407@gmail.com
+    password: lhurwbzmuuijkclo
+    templates:
+      path: mail-templates
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+          auth: true
+          starttls:
+            enable: true
+            required: true
+  thymeleaf:
+    prefix: classpath:/mail-templates
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/imgr}
     username: ${DB_USERNAME:postgres}

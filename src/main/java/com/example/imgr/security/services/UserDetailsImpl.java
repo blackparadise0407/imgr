@@ -21,10 +21,12 @@ public class UserDetailsImpl implements UserDetails {
     private String email;
     @JsonIgnore
     private String password;
+    private boolean verified;
+    private boolean enabled = true;
 
     public static UserDetailsImpl build(UserEntity userEntity) {
 //        List<GrantedAuthority> authorities  = userEntity.getRoles
-    return new UserDetailsImpl(userEntity.getId(), userEntity.getUsername(), userEntity.getPassword(), userEntity.getEmail());
+    return new UserDetailsImpl(userEntity.getId(), userEntity.getUsername(),  userEntity.getEmail(),userEntity.getPassword(), userEntity.isVerified(), userEntity.isEnabled());
     }
 
     @Override
@@ -34,21 +36,21 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return enabled;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return enabled;
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return enabled;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return enabled;
     }
 }
