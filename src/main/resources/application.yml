@@ -6,11 +6,6 @@ imgr:
     jwt:
       secret: 040799Khoa
       expiration: 900000
-    mail:
-      username: blackparadise0407@gmail.com
-      password: lhurwbzmuuijkclo
-
-
 spring:
   application:
     name: imgr
@@ -23,7 +18,7 @@ spring:
     host: smtp.gmail.com
     port: 465
     username: blackparadise0407@gmail.com
-    password: lhurwbzmuuijkclo
+    password: ${SMTP_PASSWORD}
     templates:
       path: mail-templates
     properties:
