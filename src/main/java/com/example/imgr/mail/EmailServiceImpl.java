@@ -19,7 +19,7 @@ import java.util.Map;
 
 @Service
 public class EmailServiceImpl implements EmailService {
-    private static final String NOREPLY_ADDRESS = "no-reply@imgr.com";
+    private static final String NOREPLY_ADDRESS = "noreply.imgr@gmail.com";
 
     private JavaMailSender javaMailSender;
 

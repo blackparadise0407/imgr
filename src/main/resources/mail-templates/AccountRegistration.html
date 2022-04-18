@@ -40,7 +40,9 @@
         }
 
         a {
-            color: #ffa73b;
+            color: #ffa73b !important;
+            text-decoration: none;
+            word-break: break-all;
         }
 
         small {
@@ -48,14 +50,12 @@
         }
 
         .container {
-            max-width: 60%;
-            margin: 0 auto;
+            max-width: 27rem;
+            margin: 2rem auto;
             padding: 2rem;
             border-radius: 4px;
             background-color: #fff;
-            -webkit-box-shadow: 0px 0px 10px -5px rgba(153, 153, 153, 0.75);
-            -moz-box-shadow: 0px 0px 10px -5px rgba(153, 153, 153, 0.75);
-            box-shadow: 0px 0px 10px -5px rgba(153, 153, 153, 0.75);
+            border: 1px solid #e3e3e3;
         }
 
         .container .title {
@@ -68,16 +68,16 @@
 <body>
 <div class="container">
     <h1 class="title">Welcome to Imgr!</h1>
-    <p th:text="#{Hi, ${recipientName}}"></p>
+    <p th:text="${'Hi, ' + recipientName}"></p>
     <p>
         We're excited to have you get started. First, you need to confirm your
         account. Just press the button below.
     </p>
-    <a href="${link}"><button>Confirm account</button></a>
+    <a th:href="@{${link}}"><button>Confirm account</button></a>
     <p>
         If that doesn't work, copy and paste the following link in your browser:
     </p>
-    <a href="${link}">link</a>
+    <a th:href="@{${link}}" th:text="${link}"></a>
     <p>
         If you have any question, please reply to our support team
         <a href="mailto:imgr.support@gmail.com">imgr.support@gmail.com</a>

@@ -26,4 +26,5 @@ public class UserEntity {
     private String password;
     private boolean verified = false;
     private boolean enabled = true;
+
 }
