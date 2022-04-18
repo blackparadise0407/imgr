@@ -6,11 +6,6 @@ imgr:
     jwt:
       secret: 040799Khoa
       expiration: 900000
-    mail:
-      username: blackparadise0407@gmail.com
-      password: lhurwbzmuuijkclo
-
-
 spring:
   application:
     name: imgr
