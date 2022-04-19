@@ -10,6 +10,7 @@ imgr:
       refresh_expiration: 2592000000 # 30 days 30 * 24 * 60 * 60 * 1000
       reset_expiration: 300000 # 5 * 60 * 1000
       verify_expiration: 300000 # 5 * 60 * 1000
+    redirect_url: http://localhost:3000
 
 
 spring:
@@ -35,7 +36,7 @@ spring:
             enable: true
             required: true
   thymeleaf:
-    prefix: classpath:/mail-templates
+    template-resolver-order: 0
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/imgr}
     username: ${DB_USERNAME:postgres}
