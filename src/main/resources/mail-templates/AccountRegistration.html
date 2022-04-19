@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
+<html
+        lang="en"
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://thymeleaf.org"
+>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
             rel="stylesheet"
@@ -15,10 +19,6 @@
         html {
             font-family: "Roboto", sans-serif;
             font-size: 16px;
-        }
-
-        body {
-            background-color: #f4f4f4;
         }
 
         p {
@@ -66,23 +66,28 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <h1 class="title">Welcome to Imgr!</h1>
-    <p th:text="${'Hi, ' + recipientName}"></p>
-    <p>
-        We're excited to have you get started. First, you need to confirm your
-        account. Just press the button below.
-    </p>
-    <a th:href="@{${link}}"><button>Confirm account</button></a>
-    <p>
-        If that doesn't work, copy and paste the following link in your browser:
-    </p>
-    <a th:href="@{${link}}" th:text="${link}"></a>
-    <p>
-        If you have any question, please reply to our support team
-        <a href="mailto:imgr.support@gmail.com">imgr.support@gmail.com</a>
-    </p>
-    <small>Please do not reply this email</small>
+<div style="background-color: #f4f4f4; padding: 2rem 0;">
+    <div class="container">
+        <h1 class="title">Welcome to Imgr!</h1>
+        <p th:text="${'Hi, ' + recipientName}"></p>
+        <p>
+            We're excited to have you get started. First, you need to confirm your
+            account. Just press the button below.
+        </p>
+        <a th:href="@{${link}}">
+            <button>Confirm account</button>
+        </a>
+        <p>
+            If that doesn't work, copy and paste the following link in your
+            browser:
+        </p>
+        <a th:href="@{${link}}" th:text="${link}"></a>
+        <p>
+            If you have any question, please reply to our support team
+            <a href="mailto:imgr.support@gmail.com">imgr.support@gmail.com</a>
+        </p>
+        <small>Please do not reply this email</small>
+    </div>
 </div>
 </body>
 </html>
